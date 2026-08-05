@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
           fontSize: '0.875rem',
           fontFamily: 'Inter, sans-serif',
         },
-        success: { iconTheme: { primary: '#6366f1', secondary: '#fff' } },
+        success: { iconTheme: { primary: '#5e61f3', secondary: '#fff' } },
         error:   { iconTheme: { primary: '#ef4444', secondary: '#fff' } },
       }}
     />
