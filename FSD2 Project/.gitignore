@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+
+# Uploaded user files
+uploads/
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.log

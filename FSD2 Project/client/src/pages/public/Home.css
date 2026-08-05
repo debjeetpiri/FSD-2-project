@@ -1,0 +1,51 @@
+/* Hero */
+.hero {
+  position: relative;
+  padding-block: var(--sp-16) var(--sp-12);
+  overflow: hidden;
+}
+.hero__glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.12;
+}
+.hero__glow--left  { background: var(--clr-primary); top: -200px; left: -200px; }
+.hero__glow--right { background: var(--clr-accent);  bottom: -200px; right: -200px; }
+
+.hero__content { max-width: 700px; margin-inline: auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--sp-5); }
+.hero__badge   { align-self: center; }
+.hero__title   { line-height: 1.1; }
+.hero__subtitle { font-size: 1.125rem; color: var(--clr-text-muted); max-width: 540px; }
+.hero__cta     { display: flex; gap: var(--sp-3); flex-wrap: wrap; justify-content: center; }
+
+/* Stats */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-12);
+}
+.hero__stat-card { display: flex; align-items: center; gap: var(--sp-3); }
+.hero__stat-icon { color: var(--clr-primary-light); }
+.hero__stat-value { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; }
+.hero__stat-label { margin-top: 2px; }
+
+/* Features */
+.features { padding-block: var(--sp-16); }
+.section-header { margin-bottom: var(--sp-10); display: flex; flex-direction: column; gap: var(--sp-3); }
+.feature-card   { display: flex; flex-direction: column; gap: var(--sp-3); }
+.feature-card__icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(99,102,241,.12); display: grid; place-items: center; color: var(--clr-primary-light); }
+.feature-card__title { font-size: 1.05rem; }
+.feature-card__desc  { line-height: 1.6; }
+
+/* CTA banner */
+.cta-banner        { padding-block: var(--sp-8); }
+.cta-banner__inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); position: relative; overflow: hidden; padding: var(--sp-12); }
+.cta-banner__glow  { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,.2), transparent 70%); pointer-events: none; }
+
+@media (max-width: 1024px) { .hero__stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .hero__stats { grid-template-columns: 1fr; } .hero__cta { flex-direction: column; width: 100%; } }

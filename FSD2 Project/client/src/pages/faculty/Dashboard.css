@@ -1,0 +1,30 @@
+/* Shared dashboard styles (duplicated for Vite compatibility) */
+.dashboard-header { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.dashboard-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); }
+.dashboard-section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:var(--sp-4); }
+.dashboard-section-header h2 { font-size:1.15rem; }
+.dashboard-empty { display:flex; flex-direction:column; align-items:center; gap:var(--sp-3); padding:2.5rem; text-align:center; }
+.stat-card { display:flex; flex-direction:column; gap:var(--sp-2); }
+.stat-card__icon { width:40px; height:40px; border-radius:var(--radius-md); background:rgba(99,102,241,.08); display:grid; place-items:center; }
+.stat-card__value { font-family:var(--font-display); font-size:2rem; font-weight:800; }
+.enrolled-card { display:flex; align-items:center; gap:var(--sp-3); padding:var(--sp-3); text-decoration:none; color:var(--clr-text); }
+.enrolled-card__thumb { width:56px; height:56px; border-radius:var(--radius-md); overflow:hidden; flex-shrink:0; background:var(--clr-surface-2); }
+.enrolled-card__thumb img { width:100%; height:100%; object-fit:cover; }
+.enrolled-card__placeholder { width:100%; height:100%; display:grid; place-items:center; color:var(--clr-text-faint); }
+.enrolled-card__body { flex:1; display:flex; flex-direction:column; gap:3px; }
+.enrolled-card__title { font-size:.9rem; font-weight:600; }
+
+/* Faculty course card */
+.my-course-card { display:flex; flex-direction:column; gap:var(--sp-3); padding:0; overflow:hidden; }
+.my-course-card__thumb { height:140px; background:var(--clr-surface-2); overflow:hidden; }
+.my-course-card__thumb img { width:100%; height:100%; object-fit:cover; }
+.my-course-card__body { display:flex; flex-direction:column; gap:var(--sp-2); padding:0 var(--sp-4); }
+.my-course-card__title { font-size:.95rem; font-weight:600; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.my-course-card__meta { display:flex; gap:var(--sp-3); align-items:center; }
+.my-course-card__actions { display:flex; gap:var(--sp-2); padding:var(--sp-3) var(--sp-4); border-top:1px solid var(--clr-border); }
+
+/* Danger button */
+.btn-danger { background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.3); }
+.btn-danger:hover { background:rgba(239,68,68,.25); border-color:rgba(239,68,68,.5); }
+
+@media (max-width:768px) { .dashboard-grid { grid-template-columns:1fr; } }

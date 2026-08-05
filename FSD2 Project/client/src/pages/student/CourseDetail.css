@@ -1,0 +1,386 @@
+/* Course detail hero */
+.course-detail__hero {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--clr-surface);
+  overflow: hidden;
+}
+
+.course-detail__hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(4px) brightness(0.35);
+}
+
+.course-detail__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,23,42,.95) 30%, rgba(15,23,42,.4));
+}
+
+.course-detail__hero-content {
+  position: relative;
+  z-index: 1;
+  padding-block: 2rem;
+}
+
+.course-detail__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.course-detail__desc {
+  color: var(--clr-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.course-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.course-detail__meta > span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--clr-text-muted);
+}
+
+/* Tabs */
+.course-detail__container {
+  padding-top: var(--sp-6);
+}
+
+.course-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--clr-border);
+  margin-bottom: var(--sp-6);
+  overflow-x: auto;
+}
+
+.course-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 150ms, border-color 150ms;
+}
+
+.course-tab:hover {
+  color: var(--clr-text);
+}
+
+.course-tab--active {
+  color: var(--clr-primary-light);
+  border-bottom-color: var(--clr-primary);
+  font-weight: 600;
+}
+
+.course-tab-content {
+  min-height: 400px;
+}
+
+/* Overview tab */
+.learning-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.learning-outcomes li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Custom Video Player */
+.custom-player {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #090d16;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-player__video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  display: grid;
+  place-items: center;
+}
+
+.custom-player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.custom-player__overlay-btn {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.85);
+  color: #fff;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 150ms, background 150ms;
+}
+
+.custom-player__overlay-btn:hover {
+  transform: scale(1.1);
+  background: var(--clr-primary);
+}
+
+.custom-player__controls {
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.custom-player__seek {
+  width: 100%;
+  accent-color: var(--clr-primary);
+  cursor: pointer;
+}
+
+.custom-player__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-player__left,
+.custom-player__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.player-btn {
+  background: none;
+  border: none;
+  color: var(--clr-text);
+  cursor: pointer;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+}
+.player-btn:hover { color: var(--clr-primary-light); }
+
+.custom-player__vol-slider {
+  width: 70px;
+  accent-color: var(--clr-primary);
+}
+
+.speed-selector {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.speed-btn {
+  background: none;
+  border: none;
+  color: var(--clr-text-muted);
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.speed-btn--active {
+  background: var(--clr-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.custom-player__info {
+  padding: 1rem;
+}
+
+/* Video Layout with Playlist */
+.video-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+.playlist-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.playlist-item--active {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.playlist-item__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--clr-primary-light);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.playlist-item__title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Note Cards */
+.note-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.note-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--clr-accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.note-card__info {
+  flex: 1;
+}
+
+/* Assignment Card & Submission Form */
+.assignment-card {
+  padding: 1.25rem;
+}
+
+.assignment-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.assignment-card__title {
+  font-size: 1.1rem;
+}
+
+.assignment-card__score-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.assignment-card__meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-block: 0.75rem 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.submission-status-box {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.assignment-upload-form {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.course-detail__locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .video-layout {
+    grid-template-columns: 1fr;
+  }
+}
